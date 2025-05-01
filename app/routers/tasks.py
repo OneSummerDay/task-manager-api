@@ -3,6 +3,10 @@ from app.models.task import Task
 
 router = APIRouter()
 
+@router.get("/")
+def read_root():
+    return {"message": "Hello from router!"}
+
 tasks:list[Task] = []
 
 @router.post("/tasks")
