@@ -1,7 +1,6 @@
 from fastapi import FastAPI
+from app.routers import tasks
 
 app = FastAPI()
 
-@app.get("/")
-def read_root():
-    return {'massage': 'Task manager API'}
+app.include_router(tasks.router)
