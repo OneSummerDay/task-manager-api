@@ -1,16 +1,24 @@
 from pydantic import BaseModel
 
+from pydantic import BaseModel
+
+
 class TaskBase(BaseModel):
     title: str
     description: str | None = None
-    is_done: bool = False
-    
+
+
 class TaskCreate(TaskBase):
-    pass 
+    pass
+
 
 class TaskDelete(BaseModel):
     id: int
-    
+
+
+class TaskRead(TaskBase):
+    id: int
+
     class Config:
         orm_mode = True
     
